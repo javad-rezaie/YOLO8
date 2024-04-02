@@ -18,7 +18,7 @@ cd YOLO
 ## Setting Up the Docker Environment
 
 
-Build your own Docker image with MMDetection and your project code by running:
+Build Docker image by running:
 
 ```bash
 make docker-build-mmyolo

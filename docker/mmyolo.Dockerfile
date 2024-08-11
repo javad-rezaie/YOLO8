@@ -29,12 +29,12 @@ RUN apt-get update \
 
 # Install MMEngine, MMCV, MMDetection and MMYolo
 RUN pip install openmim && \
-    mim install mmengine mmcv mmdet
+    mim install "mmengine>=0.6.0" "mmcv>=2.0.0rc4,<2.1.0" "mmdet>=3.0.0,<4.0.0"
 
 # Install JupyterLab if you are interested to run experiments on the docker and seaborn to plot logs
 RUN mim install jupyterlab ipykernel seaborn
 RUN git clone https://github.com/open-mmlab/mmyolo.git &&\
-    cd mmyolo && pip install -r requirements/albu.txt &&\
+    cd mmyolo && pip install albumentations==1.3.1 &&\
     mim install -v -e .
 RUN pip install sahi
 RUN git clone https://github.com/open-mmlab/mmdetection.git

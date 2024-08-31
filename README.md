@@ -41,6 +41,24 @@ bash jupyter.sh
 1. Update the `DATA_DIR` path inside the `train.sh` script to your appropriate local path where the dataset is located.
 2. Update the `GPU` variable to the number of installed GPUs on your PC.
 
+### Data Structure
+
+#### Local Machine
+
+On your local computer, the data structure is as follows:
+
+/mnt/SSD2/coco_stuff10k/ ├── images/ ├── train_coco.json └── test_coco.json
+
+
+#### Container
+
+Within the container, this directory is accessible as `/data` and will appear as:
+
+/data/ ├── images/ ├── train_coco.json └── test_coco.json
+
+
+The local path `/mnt/SSD2/coco_stuff10k/` is mapped to `/data/` inside the container.
+
 ## Tips
 Ensure that the `train.sh` and  `jupyter.sh` bash scripts has executable permissions. If not, grant execute permission by running `chmod u+x train.sh`.
 

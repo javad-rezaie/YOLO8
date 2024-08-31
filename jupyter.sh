@@ -6,10 +6,22 @@
 # License: Apache License 2.0
 #
 
-DATA_DIR="/mnt/SSD2/coco_stuff10k/"
-OUT_DIR="$PWD/out"
-CONFIG_DIR=$PWD/codes/
-NOTEBOOK_DIR=$PWD/notebooks/
+DATA_DIR="/mnt/SSD2/coco_stuff10k/" # In the container, it is acceable as /data
+#Data Structure on my local computer is as follows:
+#/mnt/SSD2/coco_stuff10k/
+#├── images/
+#├── train_coco.json
+#└── test_coco.json
+
+#It will be mapped to container, and it seems like:
+#/data/
+#├── images/
+#├── train_coco.json
+#└── test_coco.json
+
+OUT_DIR="$PWD/out" # In the container, it is acceable as /out
+CONFIG_DIR=$PWD/codes/ # In the container, it is acceable as /configs
+NOTEBOOK_DIR=$PWD/notebooks/ # In the container, it is acceable as /notebooks
 
 docker run -it --rm \
     --gpus all \

@@ -17,6 +17,19 @@ _base_ = [
 # Adjust the paths within the configuration to point to your dataset directory. 
 # This ensures that the training pipeline accesses the correct data during the training process.
 
+# In the container, it is acceable as /data
+#Data Structure on my local computer is as follows:
+#/mnt/SSD2/coco_stuff10k/
+#├── images/
+#├── train_coco.json
+#└── test_coco.json
+
+#It will be mapped to container, and it seems like:
+#/data/
+#├── images/
+#├── train_coco.json
+#└── test_coco.json
+
 data_root = "/data/" 
 train_annot = "train_coco.json"
 val_annot = "test_coco.json"
